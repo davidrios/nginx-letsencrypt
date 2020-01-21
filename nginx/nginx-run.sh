@@ -4,7 +4,7 @@ trap '[ -z "$child" ] || kill -INT $child' EXIT
 trap '[ -z "$child" ] || kill -TERM $child' TERM
 trap '[ -z "$child" ] || kill -INT $child' INT
 
-mkdir /var/www/letsencrypt
+mkdir -p /var/www/letsencrypt
 
 nginx -g "daemon off;" &
 child=$!
