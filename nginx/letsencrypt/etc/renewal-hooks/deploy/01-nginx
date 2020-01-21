@@ -1,0 +1,2 @@
+#!/bin/sh
+nginx -t 2>/dev/null && nginx -s reload 2>/dev/null

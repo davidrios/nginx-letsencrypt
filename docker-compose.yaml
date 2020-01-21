@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    volumes:
+      - ./nginx/letsencrypt/etc:/etc/letsencrypt
+      - ./nginx/letsencrypt/var-lib:/var/lib/letsencrypt
+      - ./nginx/letsencrypt/var-log:/var/log/letsencrypt
+      - ./nginx/www:/var/www/test
+    init: true
+    ports:
+      - '8001:80'
+      - '4431:443'
