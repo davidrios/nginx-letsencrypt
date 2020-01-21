@@ -12,5 +12,5 @@ services:
       - ./nginx/www:/var/www/test
     init: true
     ports:
-      - '8001:80'
-      - '4431:443'
+      - '80:80'
+      - '443:443'
